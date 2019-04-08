@@ -1,7 +1,7 @@
 # 2i013-isoworld
 Simulation of an ecosystem with forest fire, water flow and a prey-predator population, with a simple game mechanism
 
-Dans le repertoire desire
+Dans le répertoire désiré
 
 $ git clone https://github.com/tramy1258/2i013-isoworld.git
 
