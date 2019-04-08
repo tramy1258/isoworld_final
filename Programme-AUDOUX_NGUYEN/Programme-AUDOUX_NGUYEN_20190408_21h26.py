@@ -1330,9 +1330,9 @@ def initWorld():
 ### ### ### ### ###
 
 def initAgents():
-    for i in range(1):
+    for i in range(nbPrey):
         agents.append(BasicAgent(preyId))
-    for i in range(1):
+    for i in range(nbPreda):
         agents.append(BasicAgent(predaId))
     return
 
