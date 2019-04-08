@@ -1,0 +1,7 @@
+Dans un terminal, se mettre dans le répertoire désiré et taper:
+
+$ git clone https://github.com/tramy1258/-2i013--Projet-AUDOUX_NGUYEN-.git
+
+$ cd -2i013--Projet-AUDOUX_NGUYEN-/Programme-AUDOUX_NGUYEN
+
+$ python3 nom.py
