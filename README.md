@@ -3,8 +3,8 @@ Simulation of an ecosystem with forest fire, water flow and a prey-predator popu
 
 Dans le répertoire désiré
 
-$ git clone https://github.com/tramy1258/2i013-isoworld.git
+$ git clone https://github.com/tramy1258/-2i013--Projet-AUDOUX_NGUYEN-.git
 
-$ cd 2i013-isoworld/Programme-AUDOUX_NGUYEN
+$ cd -2i013--Projet-AUDOUX_NGUYEN-/Programme-AUDOUX_NGUYEN
 
 $ python3 nom.py
