@@ -1,7 +1,7 @@
 # 2i013-isoworld
 Simulation of an ecosystem with forest fire, water flow and a prey-predator population, with a simple game mechanism
 
-Dans le répertoire désiré
+In a terminal, direct to desired directory and type
 
 $ git clone https://github.com/tramy1258/-2i013--Projet-AUDOUX_NGUYEN-.git
 
