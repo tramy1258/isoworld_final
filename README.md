@@ -5,8 +5,6 @@ Dans le répertoire désiré
 
 $ git clone https://github.com/tramy1258/2i013-isoworld.git
 
-$ cd 2i013-isoworld
-
-$ cd Programme-AUDOUX_NGUYEN
+$ cd 2i013-isoworld/Programme-AUDOUX_NGUYEN
 
 $ python3 nom.py
