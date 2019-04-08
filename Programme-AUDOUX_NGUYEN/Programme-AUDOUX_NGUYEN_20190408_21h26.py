@@ -681,7 +681,7 @@ class BasicAgent:
             print ("agent of type ",str(self.type),"located at (",self.x,",",self.y,")")        
         return
 
-    def movePreda2 (self): #move to catch prey in neighborhood within 3 steps, move randomly in case no prey found, eat prey to survive
+    def movePreda (self): #move to catch prey in neighborhood within 3 steps, move randomly in case no prey found, eat prey to survive
         self.cpt += 1
         neighbours = ((+1,0),(0,+1),(-1,0),(0,-1)) 
         x_prey_caught = y_prey_caught = -1
@@ -1624,7 +1624,7 @@ def stepAgents( it = 0 ):
                             setAgentAt(x,y,predaId+2)
                         nb_pred += 1
                         if random() < probaAgentMove[season - 1]:
-                            res = agents[i].movePreda2()
+                            res = agents[i].movePreda()
                         else:
                             res = (-1,-1)
                         if res != (-1,-1):
