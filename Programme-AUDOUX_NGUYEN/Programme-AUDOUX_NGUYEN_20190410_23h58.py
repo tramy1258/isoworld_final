@@ -1938,7 +1938,7 @@ while userExit == False:
         print ("[fps] ", ( it - itStamp ) / ( datetime.datetime.now().timestamp()-timeStamp ) )
         timeStamp = datetime.datetime.now().timestamp()
         itStamp = it
-    if it != 0 and it % 1000 == 0:
+    if it != 0 and it % 500 == 0:
         last_season = season
         season = season % 4 + 1
         setSeason(season)
