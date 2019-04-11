@@ -1397,7 +1397,6 @@ def initWorld():
         setObjectAt(x,y,choice([4,7,10,13]))
         seasonTab[y][x] = season
         cpt = cpt + 1
-    print ("init world done")
     return
 
 ### ### ### ### ###
@@ -1421,7 +1420,6 @@ def initAgents():
             agents.append(fish_tmp)
         else:
             break
-    print("init agents done")
     return
 
 ### ### ### ### ###
@@ -1741,10 +1739,10 @@ def stepAgents( it = 0 ):
                     setAgentAt(x,y,0)
                     del agents[i]
                     nba -= 1
-            elif agents[i].getType() in (predaId, predaId + 1, predaId + 2) :
-
+                    
             #predators
             #predators die before moving -> no catching prey after dying or dying after catching prey
+            elif agents[i].getType() in (predaId, predaId + 1, predaId + 2) :
                 if cpt < lifeCyclePreda: #predators still have energy
                     if getObjectAt(x,y) in (60,61) and season != 4: #predators drowned
                         if verbose == True:
@@ -1985,9 +1983,9 @@ while userExit == False:
 
     screen.blit(text_season[season-1],(10,110+60+35))
 
-    text_up_pressed = font.render('i',True,(0,255,0))
-    text_left_pressed = font.render('j',True,(0,255,0))
-    text_down_pressed = font.render('k',True,(0,255,0))
+    text_up_pressed    = font.render('i',True,(0,255,0))
+    text_left_pressed  = font.render('j',True,(0,255,0))
+    text_down_pressed  = font.render('k',True,(0,255,0))
     text_right_pressed = font.render('l',True,(0,255,0))
 
     stepWorld(it)
@@ -2060,7 +2058,7 @@ while userExit == False:
         time_start_lm = datetime.datetime.now().timestamp()
         print ("game end time start = ", time_start_lm)
 
-    if gameEnd == 4 and dpy_lm == False: #player drowned
+    if gameEnd == 4 and dpy_lm == False: #extinction
         dpy_lm = True
         text_lm = font.render('!!! extinction !!!',True,(0,0,0))
         time_start_lm = datetime.datetime.now().timestamp()
