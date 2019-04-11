@@ -594,7 +594,7 @@ def render( it = 0 ):
 
             for level in range(objectMapLevels):                
                 if getObjectAt( xTile , yTile , level)  > 0: # object on terrain?
-                    xScreen = xScreen + getTotalWidthDiff2(xTile, yTile, level)
+                    xScreen = xScreen + getTotalWidthDiff(xTile, yTile, level)
                     yScreen = yScreen - getTotalHeightDiff(xTile, yTile,level) 
                     if getObjectAt( xTile , yTile , level) in (61,60): #water?
                     	screen.blit( objectType[ getObjectAt( xTile , yTile, level) ][0] , (xScreen,yScreen - heightNoise)) 
