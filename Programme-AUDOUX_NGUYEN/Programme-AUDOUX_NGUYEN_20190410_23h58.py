@@ -923,12 +923,10 @@ class Dropper(BasicAgent):
 class Fish(BasicAgent):
 
     def __new__(cls,imageId,x = randint(0,getWorldWidth()-1),y = randint(0,getWorldWidth()-1),shown =False):
-        #print("fish should be born at x = ",x," y =",y)
         instance = super().__new__(cls,imageId,x,y)
         if not instance:
             return None
         else:
-            #print("fish born at x = ",instance.x," y = ",instance.y)
             instance.shown = False
             return instance
 
@@ -946,6 +944,7 @@ class Fish(BasicAgent):
                 self.x = (self.x - 1)%getWorldWidth()
                 setAgentAt(self.x,self.y,self.type)
             else:
+                #fish up and not shown can move randomly
                 n = choice(neighbours)
                 xNew = ( self.x + n[0] + getWorldWidth() ) % getWorldWidth()
                 yNew = ( self.y + n[1] + getWorldHeight() ) % getWorldHeight()
@@ -953,6 +952,7 @@ class Fish(BasicAgent):
                     self.x = xNew
                     self.y = yNew
         else:
+            #fish heading downward go left, turn back to fish up and disappear if not stuck on ground
             setAgentAt(self.x,self.y,noAgentId)
             self.x -= 1             
             self.type = fishId
@@ -1827,9 +1827,9 @@ def stepAgents( it = 0 ):
             else:
                 i += 1
 
-        nbPrey = nb_prey
+        nbPrey  = nb_prey
         nbPreda = nb_pred
-        nbFish =nb_fish
+        nbFish  = nb_fish
         if verbose == True:
             print (nb_prey," preys left ",nb_pred," predators left ",nb_fish," fish left")
 
