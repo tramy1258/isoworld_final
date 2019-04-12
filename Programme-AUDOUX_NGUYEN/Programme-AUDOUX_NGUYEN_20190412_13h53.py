@@ -89,7 +89,6 @@ verbose = False # display message in console on/off
 verboseFps = True # display FPS every once in a while
 
 season = 1 #spring at beginning
-last_season = 1
 probaFire        = [0.5   ,0.5   ,0.5   ,0]
 probaSuddenFire  = [0.0005,0.0005,0.0005,0]
 probaTreeGrow    = [0.002 ,0.003 ,0.001 ,0]
@@ -1460,8 +1459,8 @@ def stepWorld( it = 0 ):
 
                 #normal trees
                 if getObjectAt(x,y) >= 4 and getObjectAt(x,y) < 16:
-                    if season != last_season and last_season != 4 and season != 4 and seasonTab[y][x] != season:
-                        if random() < 0.2:
+                    if season != 4 and seasonTab[y][x] != season:
+                        if random() < 0.5:
                             setObjectAt(x,y,getObjectAt(x,y) + season - seasonTab[y][x])
                             seasonTab[y][x] = season
                     if season == 4 and random() < 0.1:
@@ -1934,7 +1933,6 @@ while userExit == False:
         timeStamp = datetime.datetime.now().timestamp()
         itStamp = it
     if it_season != 0 and it_season % 500 == 0:
-        last_season = season
         season = season % 4 + 1
         setSeason(season)
 
@@ -2142,28 +2140,24 @@ while userExit == False:
             elif event.key == pygame.K_p:
                 if season != 1:
                     it_season = 0
-                last_season = season
                 season = 1
                 setSeason(season)
                 print ("Spring")
             elif event.key == pygame.K_e:  
                 if season != 2:
-                    it_season = 0
-                last_season = season           
+                    it_season = 0           
                 season = 2
                 setSeason(season)
                 print ("Summer")
             elif event.key == pygame.K_a:
                 if season != 3:
                     it_season = 0
-                last_season = season
                 season = 3
                 setSeason(season)
                 print ("Fall")
             elif event.key == pygame.K_h:
                 if season != 4:
                     it_season = 0
-                last_season =season
                 season = 4
                 setSeason(season)
                 print ("winter") 
