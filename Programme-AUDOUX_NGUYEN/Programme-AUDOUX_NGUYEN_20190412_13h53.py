@@ -2023,8 +2023,8 @@ while userExit == False:
             gameEnd = 3
 
     if gameEnd == 0:
-        if getObjectAt(player.x,player.y,level) in (rockId,snowmanId):#,flagId):
-            if nbKilled >= 1:
+        if getObjectAt(player.x,player.y,level) in (rockId,snowmanId):
+            if nbKilled >= 5:
                 print("won")
                 del player
                 gameEnd = 2
